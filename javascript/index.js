@@ -2,29 +2,41 @@ function updateTime() {
   //los angeles
   let losAngelesElement = document.querySelector("#los-angeles");
   if (losAngelesElement) {
-  let losAngelesDateElement = losAngelesElement.querySelector(".date");
-  let losAngelesTimeElement = losAngelesElement.querySelector(".time");
-  let losAngelesTime = moment().tz("America/Los_Angeles");
+    let losAngelesDateElement = losAngelesElement.querySelector(".date");
+    let losAngelesTimeElement = losAngelesElement.querySelector(".time");
+    let losAngelesTime = moment().tz("America/Los_Angeles");
 
-  losAngelesDateElement.innerHTML = losAngelesTime.format("MMMM Do YYYY");
-  losAngelesTimeElement.innerHTML = `${losAngelesTime.format(
-    "h:mm:ss"
-  )} <small>${losAngelesTime.format("A")}</small>`;
-}
-
+    losAngelesDateElement.innerHTML = losAngelesTime.format("MMMM Do YYYY");
+    losAngelesTimeElement.innerHTML = `${losAngelesTime.format(
+      "h:mm:ss"
+    )} <small>${losAngelesTime.format("A")}</small>`;
+  }
 
   //paris
   let parisElement = document.querySelector("#paris");
   if (parisElement) {
-  let parisDateElement = parisElement.querySelector(".date");
-  let parisTimeElement = parisElement.querySelector(".time");
-  let parisTime = moment().tz("Europe/Paris");
+    let parisDateElement = parisElement.querySelector(".date");
+    let parisTimeElement = parisElement.querySelector(".time");
+    let parisTime = moment().tz("Europe/Paris");
 
-  parisDateElement.innerHTML = parisTime.format("MMMM Do YYYY");
-  parisTimeElement.innerHTML = `${parisTime.format(
-    "h:mm:ss"
-  )} <small>${parisTime.format("A")}</small>`;
-}
+    parisDateElement.innerHTML = parisTime.format("MMMM Do YYYY");
+    parisTimeElement.innerHTML = `${parisTime.format(
+      "h:mm:ss"
+    )} <small>${parisTime.format("A")}</small>`;
+  }
+
+  //bangkok
+  let bangkokElement = document.querySelector("#bangkok");
+  if (bangkokElement) {
+    let bangkokDateElement = bangkokElement.querySelector(".date");
+    let bangkokTimeElement = bangkokElement.querySelector(".time");
+    let bangkokTime = moment().tz("Asia/Bangkok");
+
+    bangkokDateElement.innerHTML = bangkokTime.format("MMMM Do YYYY");
+    bangkokTimeElement.innerHTML = `${bangkokTime.format(
+      "h:mm:ss"
+    )} <small>${bangkokTime.format("A")}</small>`;
+  }
 }
 
 function updateCity(event) {
@@ -40,9 +52,9 @@ function updateCity(event) {
     <h2>${cityName}</h2>
           <div class="date">${cityTime.format("MMMM Do YYYY")}</div>
         </div>
-        <div class="time">${cityTime.format("h:mm:ss")} <small>${cityTime.format(
-    "A"
-  )}</small></div>
+        <div class="time">${cityTime.format(
+          "h:mm:ss"
+        )} <small>${cityTime.format("A")}</small></div>
       </div>
       <a href="index.html">All cities</a>
     `;
